@@ -85,6 +85,8 @@ export async function POST(request) {
 
 // API endpoint for getting blogs
 export async function GET(request) {
+    // Initialize DB Connection
+    await initializeDB();
     const blogId = request.nextUrl.searchParams.get("id");
     if (blogId) {
         const blog = await BlogModel.findById(blogId);
