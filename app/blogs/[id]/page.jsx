@@ -64,17 +64,10 @@ const Page = ({ params }) => {
             </div>
             <div className='mx-5 md:mx-auto max-w-[800px] mt-[-100px] mb-10'>
                 <Image src={data.image} width={1280} height={720} alt='Blog image' priority className='border-8 border-white' />
-                <h1 className='my-8 font-semibold text-[26px]'>Introduction:</h1>
-                <p>{data.description}</p>
-                {/* Add steps dynamically if provided */}
-                {data.steps?.map((step, index) => (
-                    <React.Fragment key={index}>
-                        <h3 className='my-5 text-[18px] font-semibold'>Step {index + 1}: {step.title}</h3>
-                        <p className='my-3'>{step.description}</p>
-                    </React.Fragment>
-                ))}
-                <h3 className='my-5 text-[18px] font-semibold'>Conclusion:</h3>
-                <p className='my-3'>{data.conclusion}</p>
+                {/* limitting decsription */}
+                <div className='blog-content' dangerouslySetInnerHTML={{ __html: data.description }}>
+                </div>
+
                 <div className='my-24'>
                     <p className='text-balance font-semibold my-4'>Share this article on social media</p>
                     <div className='flex'>
