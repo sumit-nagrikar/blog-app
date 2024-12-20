@@ -6,8 +6,8 @@ import React from 'react'
 const Sidebar = () => {
     return (
         <div className='flex flex-col bg-slate-100'>
-            <div className='px-2 sm:pl-14 py-3 border border-black'>
-                <Image src={assets.logo} />
+            <div className='sm:pl-14 pt-2 pb-1 border border-black'>
+                <Image src={assets.logo} className='w-[130px] sm:max-w[150px]' />
             </div>
             {/* navigation buttons*/}
             <div className='w-28 sm:w-80 h-[100vh] relative py-12 border border-black'>
